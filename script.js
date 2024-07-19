@@ -1,12 +1,82 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('apply-filters').addEventListener('click', () => {
+    document.getElementById('apply-filters')?.addEventListener('click', () => {
         loadEvents();
     });
     loadEvents();
     loadGallery();
     setupModal();
     setupMobileMenu();
+    loadVideos();
 });
+
+async function loadVideos() {
+    try {
+        const nocodbApiEndpoint = 'https://nocodb-sc4kso4.smokesms.com/api/v2/tables/videos/records?limit=25&shuffle=0&offset=0';
+        const nocodbApiToken = 'xdlsuG2Khv0-YRxodE2eoW_E3R1B_h0Ywneiaw1j';
+        
+        const config = {
+            headers: {
+                'xc-token': nocodbApiToken,
+                'accept': 'application/json'
+            }
+        };
+
+        const response = await axios.get(nocodbApiEndpoint, config);
+        const videos = response.data.list;
+
+        const videoGrid = document.getElementById('video-grid');
+        if (!videoGrid) return;
+
+        videoGrid.innerHTML = '';
+
+        videos.forEach(video => {
+            const videoCard = document.createElement('div');
+            videoCard.classList.add('video-card', 'relative', 'cursor-pointer', 'transition', 'duration-300', 'ease-in-out', 'transform', 'hover:scale-105');
+            
+            videoCard.innerHTML = `
+                <img src="${video.thumbnail}" alt="${video.title}" class="w-full h-48 object-cover rounded-lg">
+                <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-100 transition-opacity duration-300">
+                    <svg class="w-16 h-16 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14.752 11.168l-3.197-2.132A1 1 0 0010 9.87v4.263a1 1 0 001.555.832l3.197-2.132a1 1 0 000-1.664z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                    </svg>
+                </div>
+                <h3 class="mt-2 text-lg font-semibold">${video.title}</h3>
+            `;
+
+            videoCard.addEventListener('click', () => openVideoModal(video));
+            videoGrid.appendChild(videoCard);
+        });
+    } catch (error) {
+        console.error('Error loading videos:', error);
+    }
+}
+
+function openVideoModal(video) {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    const title = document.getElementById('video-title');
+    const closeButton = document.getElementById('close-modal');
+
+    title.textContent = video.title;
+    iframe.src = video.video_url;
+    modal.classList.remove('hidden');
+
+    closeButton.addEventListener('click', closeVideoModal);
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) {
+            closeVideoModal();
+        }
+    });
+}
+
+function closeVideoModal() {
+    const modal = document.getElementById('video-modal');
+    const iframe = document.getElementById('video-iframe');
+    
+    modal.classList.add('hidden');
+    iframe.src = '';
+}
 
 function setupMobileMenu() {
     const mobileMenuButton = document.getElementById('mobile-menu-button');
