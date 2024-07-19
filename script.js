@@ -5,7 +5,17 @@ document.addEventListener('DOMContentLoaded', function () {
     loadEvents();
     loadGallery();
     setupModal();
+    setupMobileMenu();
 });
+
+function setupMobileMenu() {
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+    });
+}
 
 async function loadEvents(page = 1) {
     try {
