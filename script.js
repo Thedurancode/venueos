@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
 async function loadVideos() {
     try {
-        const nocodbApiEndpoint = 'https://nocodb-sc4kso4.smokesms.com/api/v2/tables/videos/records?limit=25&shuffle=0&offset=0';
+        const nocodbApiEndpoint = 'https://nocodb-sc4kso4.smokesms.com/api/v2/tables/mysmavq0bvj06qw/records?limit=25&shuffle=0&offset=0';
         const nocodbApiToken = 'xdlsuG2Khv0-YRxodE2eoW_E3R1B_h0Ywneiaw1j';
         
         const config = {
