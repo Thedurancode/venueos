@@ -154,6 +154,8 @@ function setupModal() {
     function openModal(imgUrl) {
         modalImg.src = imgUrl;
         modal.classList.add('open');
+        modalImg.classList.add('pop');
+        setTimeout(() => modalImg.classList.remove('pop'), 300);
     }
 
     function closeModal() {
