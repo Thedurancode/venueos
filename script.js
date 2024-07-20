@@ -5,7 +5,32 @@ document.addEventListener('DOMContentLoaded', function () {
     loadEvents();
     loadGallery();
     setupModal();
+    setupHeroSlider();
 });
+
+function setupHeroSlider() {
+    const slides = document.querySelectorAll('.hero-slide');
+    const controls = document.querySelectorAll('.hero-control');
+    let currentSlide = 0;
+
+    function showSlide(index) {
+        slides[currentSlide].classList.remove('active');
+        controls[currentSlide].classList.remove('active');
+        currentSlide = index;
+        slides[currentSlide].classList.add('active');
+        controls[currentSlide].classList.add('active');
+    }
+
+    function nextSlide() {
+        showSlide((currentSlide + 1) % slides.length);
+    }
+
+    controls.forEach((control, index) => {
+        control.addEventListener('click', () => showSlide(index));
+    });
+
+    setInterval(nextSlide, 5000); // Change slide every 5 seconds
+}
 
 async function loadEvents(page = 1) {
     try {

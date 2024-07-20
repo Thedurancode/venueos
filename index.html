@@ -97,14 +97,38 @@
     </header>
 
     <main>
-        <section id="hero" class="h-screen flex items-center justify-center bg-cover bg-center" style="background-image: url('https://via.placeholder.com/1500x800?text=Party');">
-            <div class="text-center">
-                <h1 class="text-6xl font-bold mb-4">Patio Nightclub</h1>
-                <p class="text-2xl mb-8">Experience the best Nightclub in Raleigh</p>
-                <div class="space-x-4">
-                    <a href="#" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">Guestlist</a>
-                    <a href="#gallery" class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-2 px-4 rounded border border-white">View Gallery</a>
+        <section id="hero" class="h-screen relative overflow-hidden">
+            <div class="hero-slider">
+                <div class="hero-slide active">
+                    <video autoplay loop muted playsinline>
+                        <source src="path/to/video1.mp4" type="video/mp4">
+                    </video>
                 </div>
+                <div class="hero-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="path/to/video2.mp4" type="video/mp4">
+                    </video>
+                </div>
+                <div class="hero-slide">
+                    <video autoplay loop muted playsinline>
+                        <source src="path/to/video3.mp4" type="video/mp4">
+                    </video>
+                </div>
+            </div>
+            <div class="hero-content absolute inset-0 flex items-center justify-center">
+                <div class="text-center">
+                    <h1 class="text-6xl font-bold mb-4 text-white">Patio Nightclub</h1>
+                    <p class="text-2xl mb-8 text-white">Experience the best Nightclub in Raleigh</p>
+                    <div class="space-x-4">
+                        <a href="#" class="bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">Guestlist</a>
+                        <a href="#gallery" class="bg-transparent hover:bg-white hover:text-gray-900 text-white font-bold py-2 px-4 rounded border border-white">View Gallery</a>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-controls absolute bottom-4 left-1/2 transform -translate-x-1/2 flex space-x-2">
+                <button class="hero-control active"></button>
+                <button class="hero-control"></button>
+                <button class="hero-control"></button>
             </div>
         </section>
 
