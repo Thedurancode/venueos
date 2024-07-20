@@ -208,3 +208,23 @@
 #mobile-menu.fade-out {
     animation-name: fadeOut;
 }
+
+/* Contact form styles */
+#contact-form input,
+#contact-form textarea {
+    transition: border-color 0.3s ease;
+}
+
+#contact-form input:focus,
+#contact-form textarea:focus {
+    border-color: #48bb78;
+    outline: none;
+}
+
+#contact-form button {
+    transition: background-color 0.3s ease;
+}
+
+#contact-form button:hover {
+    background-color: #38a169;
+}

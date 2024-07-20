@@ -1,7 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
-    document.getElementById('apply-filters').addEventListener('click', () => {
-        loadEvents();
-    });
+    const applyFiltersButton = document.getElementById('apply-filters');
+    if (applyFiltersButton) {
+        applyFiltersButton.addEventListener('click', () => {
+            loadEvents();
+        });
+    }
     loadEvents();
     loadGallery();
     setupModal();
