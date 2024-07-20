@@ -228,3 +228,27 @@
 #contact-form button:hover {
     background-color: #38a169;
 }
+
+/* Mobile menu animation */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+#mobile-menu {
+    animation-duration: 0.3s;
+    animation-fill-mode: both;
+}
+
+#mobile-menu.fade-in {
+    animation-name: fadeIn;
+}
+
+#mobile-menu.fade-out {
+    animation-name: fadeOut;
+}
