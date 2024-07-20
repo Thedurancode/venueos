@@ -88,31 +88,36 @@
                 <a href="#" class="text-green-500 hover:text-green-400"><i class="fab fa-instagram"></i></a>
                 <a href="#" class="text-green-500 hover:text-green-400"><i class="fab fa-twitter"></i></a>
             </div>
-            <button class="md:hidden">
+            <button id="mobile-menu-button" class="md:hidden">
                 <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
                 </svg>
             </button>
         </nav>
     </header>
+    <div id="mobile-menu" class="fixed inset-0 bg-gray-900 bg-opacity-95 z-50 hidden">
+        <div class="flex flex-col items-center justify-center h-full">
+            <a href="#" class="text-2xl font-bold mb-8 hover:text-green-500">Home</a>
+            <a href="#about" class="text-2xl font-bold mb-8 hover:text-green-500">About</a>
+            <a href="#events" class="text-2xl font-bold mb-8 hover:text-green-500">Events</a>
+            <a href="#gallery" class="text-2xl font-bold mb-8 hover:text-green-500">Gallery</a>
+            <a href="#contact" class="text-2xl font-bold mb-8 hover:text-green-500">Contact</a>
+            <a href="drink-menu.html" class="text-2xl font-bold mb-8 hover:text-green-500">Drink Menu</a>
+            <a href="add-event.html" class="text-2xl font-bold mb-8 hover:text-green-500">Add Event</a>
+        </div>
+    </div>
 
     <main>
         <section id="hero" class="h-screen relative overflow-hidden">
             <div class="hero-slider">
                 <div class="hero-slide active">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://placehold.co/1920x1080.mp4" type="video/mp4">
-                    </video>
+                    <img src="https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg" alt="Nightclub" class="w-full h-full object-cover">
                 </div>
                 <div class="hero-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://placehold.co/1920x1080.mp4" type="video/mp4">
-                    </video>
+                    <img src="https://images.pexels.com/photos/1540406/pexels-photo-1540406.jpeg" alt="DJ" class="w-full h-full object-cover">
                 </div>
                 <div class="hero-slide">
-                    <video autoplay loop muted playsinline>
-                        <source src="https://placehold.co/1920x1080.mp4" type="video/mp4">
-                    </video>
+                    <img src="https://images.pexels.com/photos/2114365/pexels-photo-2114365.jpeg" alt="Dance floor" class="w-full h-full object-cover">
                 </div>
             </div>
             <div class="hero-content absolute inset-0 flex items-center justify-center">
