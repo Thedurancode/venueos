@@ -6,7 +6,60 @@ document.addEventListener('DOMContentLoaded', function () {
     loadGallery();
     setupModal();
     setupHeroSlider();
+    setupVideoSlider();
 });
+
+function setupVideoSlider() {
+    const videoData = [
+        { id: 1, thumbnail: 'path/to/thumbnail1.jpg', videoUrl: 'path/to/video1.mp4' },
+        { id: 2, thumbnail: 'path/to/thumbnail2.jpg', videoUrl: 'path/to/video2.mp4' },
+        { id: 3, thumbnail: 'path/to/thumbnail3.jpg', videoUrl: 'path/to/video3.mp4' },
+        { id: 4, thumbnail: 'path/to/thumbnail4.jpg', videoUrl: 'path/to/video4.mp4' },
+        { id: 5, thumbnail: 'path/to/thumbnail5.jpg', videoUrl: 'path/to/video5.mp4' },
+    ];
+
+    const videoContainer = document.querySelector('.video-container');
+    const prevButton = document.getElementById('prev-video');
+    const nextButton = document.getElementById('next-video');
+    let currentIndex = 0;
+
+    function createVideoItem(video) {
+        const videoItem = document.createElement('div');
+        videoItem.classList.add('video-item');
+        videoItem.innerHTML = `
+            <img src="${video.thumbnail}" alt="Video Thumbnail">
+            <div class="play-button"></div>
+        `;
+        videoItem.addEventListener('click', () => playVideo(video.videoUrl));
+        return videoItem;
+    }
+
+    function updateSlider() {
+        videoContainer.innerHTML = '';
+        for (let i = currentIndex; i < currentIndex + 3; i++) {
+            const index = i % videoData.length;
+            videoContainer.appendChild(createVideoItem(videoData[index]));
+        }
+    }
+
+    function playVideo(videoUrl) {
+        // Implement video playback logic here
+        console.log('Playing video:', videoUrl);
+        // You can use a modal or a video player library to play the video
+    }
+
+    prevButton.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + videoData.length) % videoData.length;
+        updateSlider();
+    });
+
+    nextButton.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % videoData.length;
+        updateSlider();
+    });
+
+    updateSlider();
+}
 
 function setupHeroSlider() {
     const slides = document.querySelectorAll('.hero-slide');

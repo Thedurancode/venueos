@@ -49,6 +49,58 @@
     background-color: white;
 }
 
+/* Video Section Styles */
+#video-slider {
+    height: 400px;
+}
+
+.video-container {
+    height: 100%;
+}
+
+.video-item {
+    flex: 0 0 300px;
+    margin-right: 20px;
+    position: relative;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.video-item:hover {
+    transform: scale(1.05);
+}
+
+.video-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.video-item .play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-item .play-button::before {
+    content: '';
+    width: 0;
+    height: 0;
+    border-top: 15px solid transparent;
+    border-bottom: 15px solid transparent;
+    border-left: 25px solid #000;
+    margin-left: 5px;
+}
+
 /* Add any additional custom styles here */
 
 /* Neon text effect */
