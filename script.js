@@ -133,9 +133,9 @@ async function loadEvents(page = 1) {
 
             eventCard.innerHTML = `
                 ${eventImageUrl ? `<div class="relative mb-4 w-full h-64 overflow-hidden rounded-lg event-image-container"><img src="${eventImageUrl}" alt="${event["Event Name"]}" class="w-full h-full object-contain event-image"></div>` : ''}
-                ${event["Event Date"] ? `<div class="absolute top-2 right-2 bg-pink-500 text-white text-sm font-bold py-1 px-2 rounded">${new Date(event["Event Date"]).toLocaleDateString()}</div>` : ''}
+                ${event["Event Date"] ? `<div class="absolute top-2 right-2 bg-green-500 text-white text-sm font-bold py-1 px-2 rounded">${new Date(event["Event Date"]).toLocaleDateString()}</div>` : ''}
                 <h3 class="text-2xl font-bold mb-2">${event["Event Name"]}</h3>
-                ${event["Ticket Link"] ? `<a href="${event["Ticket Link"]}" class="mt-4 inline-block bg-pink-500 hover:bg-pink-600 text-white font-bold py-2 px-4 rounded">Get My Ticket</a>` : ''}
+                ${event["Ticket Link"] ? `<a href="${event["Ticket Link"]}" class="mt-4 inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Get My Ticket</a>` : ''}
             `;
 
             eventGrid.appendChild(eventCard);
@@ -151,7 +151,7 @@ async function loadEvents(page = 1) {
             pageButton.classList.add('mx-1', 'px-3', 'py-2', 'rounded', 'bg-gray-700', 'text-white', 'hover:bg-gray-600', 'transition', 'duration-300');
             pageButton.textContent = i;
             if (i === page) {
-                pageButton.classList.add('bg-pink-500');
+                pageButton.classList.add('bg-green-500');
             }
             pageButton.addEventListener('click', () => {
                 loadEvents(i);
