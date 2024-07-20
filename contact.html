@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Patio Nightclub</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <header class="fixed w-full z-50 bg-gray-900 bg-opacity-90">
+        <nav class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="index.html" class="text-2xl font-bold">Patio</a>
+            <div class="hidden md:flex space-x-4">
+                <a href="index.html" class="hover:text-green-500">Home</a>
+                <a href="index.html#about" class="hover:text-green-500">About</a>
+                <a href="index.html#events" class="hover:text-green-500">Events</a>
+                <a href="index.html#gallery" class="hover:text-green-500">Gallery</a>
+                <a href="contact.html" class="hover:text-green-500">Contact</a>
+                <a href="drink-menu.html" class="hover:text-green-500">Drink Menu</a>
+                <a href="add-event.html" class="hover:text-green-500">Add Event</a>
+            </div>
+            <div class="flex space-x-4">
+                <a href="#" class="text-green-500 hover:text-green-400"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" class="text-green-500 hover:text-green-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-green-500 hover:text-green-400"><i class="fab fa-twitter"></i></a>
+            </div>
+            <button id="mobile-menu-button" class="md:hidden">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path>
+                </svg>
+            </button>
+        </nav>
+    </header>
+
+    <main class="pt-20">
+        <section class="py-20">
+            <div class="container mx-auto px-6">
+                <h1 class="text-4xl font-bold mb-10 text-center">Contact Us</h1>
+                <div class="max-w-lg mx-auto">
+                    <form id="contact-form" class="space-y-6">
+                        <div>
+                            <label for="name" class="block mb-2">Name</label>
+                            <input type="text" id="name" name="name" required class="w-full p-2 rounded bg-gray-800 text-white">
+                        </div>
+                        <div>
+                            <label for="email" class="block mb-2">Email</label>
+                            <input type="email" id="email" name="email" required class="w-full p-2 rounded bg-gray-800 text-white">
+                        </div>
+                        <div>
+                            <label for="message" class="block mb-2">Message</label>
+                            <textarea id="message" name="message" required class="w-full p-2 rounded bg-gray-800 text-white h-32"></textarea>
+                        </div>
+                        <div>
+                            <button type="submit" class="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Send Message</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-gray-800 py-10">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-wrap">
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-2xl font-bold mb-4">Patio Nightclub</h3>
+                    <p>123 Party Street</p>
+                    <p>Raleigh, NC 27601</p>
+                    <p>Phone: (919) 555-1234</p>
+                    <p>Email: info@patioraleigh.com</p>
+                </div>
+                <div class="w-full md:w-1/3 mb-8 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html" class="hover:text-pink-500">Home</a></li>
+                        <li><a href="index.html#about" class="hover:text-pink-500">About</a></li>
+                        <li><a href="index.html#events" class="hover:text-pink-500">Events</a></li>
+                        <li><a href="index.html#gallery" class="hover:text-pink-500">Gallery</a></li>
+                        <li><a href="contact.html" class="hover:text-pink-500">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="w-full md:w-1/3">
+                    <h3 class="text-xl font-bold mb-4">Follow Us</h3>
+                    <div class="flex space-x-4 mb-4">
+                        <a href="#" class="text-pink-500 hover:text-pink-400"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-pink-500 hover:text-pink-400"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-pink-500 hover:text-pink-400"><i class="fab fa-twitter"></i></a>
+                    </div>
+                    <p>Stay connected for exclusive updates and offers!</p>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+                <p>&copy; 2023 Patio Nightclub. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
